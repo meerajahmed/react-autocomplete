@@ -1,3 +1,3 @@
-/**
- * Created by meeahmed on 8/14/2018.
- */
+export default (products, filterText) =>
+  products.filter((product) =>
+    (!filterText || product.category.startsWith(filterText)));
