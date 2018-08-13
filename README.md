@@ -1,2 +1,2 @@
 # react-autocomplete
-React Autocomplete
+Learning react by building a simple autocomplete app
