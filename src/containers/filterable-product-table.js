@@ -1,11 +1,11 @@
 import {connect} from "react-redux";
-import setFilterText from "../actions/setFilterText";
 import FilterableProductTable from "../components/filterable-product-table";
+import inputChange from "../actions/inputChange";
 
 const mapStateToProps = (filterText) => ({filterText});
 
 const mapDispatchToProps = (dispatch) => ({
-  handleFilterTextChange: (filterText) => dispatch(setFilterText(filterText))
+  handleFilterTextChange: (filterText) => dispatch(inputChange(filterText))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterableProductTable)
+export default connect(mapStateToProps, mapDispatchToProps)(FilterableProductTable);
