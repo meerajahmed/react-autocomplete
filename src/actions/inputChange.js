@@ -1,6 +1,6 @@
-export const INPUT_CHANGED = 'INPUT_CHANGED';
+export const INPUT_CHANGE = 'INPUT_CHANGE';
 
-export default (input) => ({
-  type: INPUT_CHANGED,
-  payload: {input}
+export default (filterText) => ({
+  type: INPUT_CHANGE,
+  payload: {filterText}
 });
