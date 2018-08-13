@@ -1,3 +1,6 @@
-/**
- * Created by meeahmed on 8/14/2018.
- */
+export const SET_FILTER_TEXT = 'SET_FILTER_TEXT';
+
+export default (filterText) => ({
+  type: SET_FILTER_TEXT,
+  payload: {filterText}
+});
