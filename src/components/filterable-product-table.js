@@ -1,27 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import SearchBar from "./search-bar";
 import ProductTable from "./product-table";
 
-export default class FilterableProductTable extends Component {
+const FilterableProductTable = (props) => (
+  <div className="container mt-5">
+    <SearchBar
+      filterText={props.filterText}
+      onFilterTextChange={props.handleFilterTextChange}/>
+    <ProductTable
+      filterText={props.filterText}
+      products={props.products}/>
+  </div>
+);
 
-  state = {
-    filterText: ''
-  };
-
-  handleFilterTextChange = (filterText) => {
-    this.setState(() => ({filterText}));
-  };
-
-  render() {
-    return (
-      <div className="container mt-5">
-        <SearchBar
-          filterText={this.state.filterText}
-          onFilterTextChange={this.handleFilterTextChange}/>
-        <ProductTable
-          filterText={this.state.filterText}
-          products={this.props.products}/>
-      </div>
-    );
-  }
-}
+export default FilterableProductTable;
