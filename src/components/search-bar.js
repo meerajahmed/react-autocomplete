@@ -1,16 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const SearchBar = (props) => {
-  return (
-    <form>
-      <div className="input-group input-group-lg">
-        <input type="text" placeholder="Search Category"
-               className="form-control" value={props.filterText}
-               onChange={(event) => props.onFilterTextChange(event.target.value)}/>
-      </div>
-    </form>
-  );
-};
+export default class SearchBar extends Component {
 
-export default SearchBar;
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterText: props.filterText
+    };
+  }
 
+  handleChange = (filterText) => {
+    this.setState(() => ({filterText}));
+    this.props.onFilterTextChange(filterText);
+  };
+
+  render() {
+    return (
+      <form>
+        <div className="input-group input-group-lg">
+          <input type="text" placeholder="Search Category"
+                 className="form-control" value={this.state.filterText}
+                 onChange={(event) => this.handleChange(event.target.value)}/>
+        </div>
+      </form>
+    );
+  }
+}
